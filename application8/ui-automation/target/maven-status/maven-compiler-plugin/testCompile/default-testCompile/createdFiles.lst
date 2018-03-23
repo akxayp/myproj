@@ -1,0 +1,5 @@
+com\vyomlabs8\uiautomation\sample\steps\TestUIThenState.class
+com\vyomlabs8\uiautomation\sample\steps\TestUIGivenState.class
+com\vyomlabs8\uiautomation\sample\UIAutomationSuite.class
+com\vyomlabs8\uiautomation\main\MainUIAutomationClass.class
+com\vyomlabs8\uiautomation\sample\steps\TestUIWhenState.class

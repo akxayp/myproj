@@ -1,0 +1,5 @@
+com\vyomlabs8\automation\steps\AutomationSuiteWhenState.class
+com\vyomlabs8\automation\steps\AutomationSuiteThenState.class
+com\vyomlabs8\automation\AutomationSuite.class
+com\vyomlabs8\automation\steps\AutomationSuiteGivenState.class
+com\vyomlabs8\automation\main\MainAutomationClass.class

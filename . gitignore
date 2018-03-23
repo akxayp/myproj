@@ -1,0 +1,4 @@
+# exclude generated or boilerplate files
+bundle/target/ 
+bundle/node_modules/ 
+package/target/

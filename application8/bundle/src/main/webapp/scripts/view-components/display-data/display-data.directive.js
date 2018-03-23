@@ -1,0 +1,51 @@
+(function () {
+    'use strict';
+
+    angular.module('com.vyomlabs8.application8.view-components.display-data').directive('comvyomlabs8application8DisplayData',
+        function (rxRecordInstanceDataPageResource) {
+            return {
+                restrict: 'E',
+                templateUrl: 'scripts/view-components/display-data/com-vyomlabs8-application8-display-data.directive.html',
+
+                scope: {
+                    rxConfiguration: '='
+                },
+
+                link: function ($scope) {
+                    var _config;
+
+                    //Getting parameters
+                    function init() {
+                        _config = $scope.rxConfiguration.propertiesByName;
+                        $scope.cfg = {};
+                        $scope.cfg.recordDefinitionName = _config.recordDefinitionName;
+                        $scope.cfg.fieldIdToDisplay = _config.fieldIdToDisplay;
+                        $scope.cfg.fieldLabelToDisplay = _config.fieldLabelToDisplay;
+                        $scope.myData = [];
+
+                        //Calling data fetch function (standard BMC OOTB Javascript APIs)
+                        getData();
+                    }
+
+                    //Calling the javascript code that fetches data.
+                    function getData() {
+                        var queryParams = {
+                            propertySelection: "179,7,10888003,8," + $scope.cfg.fieldIdToDisplay,//, // ids of fields to fetch
+                            queryExpression: "'7' != 3" //Status is not rejected
+                            //queryExpression: "'8' != developer" //Status is not rejected
+                        };
+
+                        var foo = rxRecordInstanceDataPageResource.withName($scope.cfg.recordDefinitionName);
+                        foo.get(100, 0, queryParams).then(
+                            function (allRecords) {
+                                $scope.myData = allRecords.data;
+                            }
+                        );
+                    }
+
+                    //Calling init function, only once.
+                    init();
+                }
+            };
+        });
+})();

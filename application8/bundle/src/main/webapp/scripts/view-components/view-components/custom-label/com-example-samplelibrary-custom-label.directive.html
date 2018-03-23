@@ -1,0 +1,48 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+    .tile{float:left; margin:0 5px 0 0; padding:2px; }
+
+
+    .card {
+
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+        transition: 0.3s;
+
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .container {
+        padding: 2px 16px;
+
+    }
+</style>
+
+
+
+<body >
+
+<div ng-click="myFunction()"  style="background-color:{{Colour}}; height:{{Height}}px; width: {{Width}}px;"   class="tile card">
+
+    <p style="text-align:center;"> <img src="/com.example.samplelibrary/resources/img/{{Icon}}" align="middle" style="width:{{ImgWidth}}px;height:{{ImgHeight}}px;"></p>
+    <h6 align="center" style="color: white"> {{Text}}</h6>
+
+
+
+    <div class="container">
+
+    </div>
+</div>
+</body>
+
+
+
+
+
+
+</html>
