@@ -5,7 +5,7 @@
         .config(function (rxViewComponentProvider) {
             var starRatingDescriptor = {
                 name: 'Fetch Data',
-                group: 'Sample Library Components',
+                group: 'Vyom Components',
                 icon: 'database_o',
                 type: 'com-vyomlabs8-application8-display-data',  // the name of runtime directive
                 designType: 'com-vyomlabs8-application8-display-data-design', // register design directive
